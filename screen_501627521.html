@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>አጀብ Tech | Innovative. Scalable. Secure.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#201f1f",
+                        "inverse-primary": "#5d5f5f",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#636565",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-dim": "#141313",
+                        "on-secondary-container": "#bab8b7",
+                        "primary-container": "#e2e2e2",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#141313",
+                        "outline": "#8e9192",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary-container": "#4a4949",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-fixed-variant": "#474646",
+                        "tertiary-container": "#e3e2e2",
+                        "on-tertiary-container": "#646464",
+                        "on-primary": "#2f3131",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary": "#313030",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "on-background": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "primary": "#ffffff",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#444748",
+                        "background": "#0A0A0A",
+                        "tertiary": "#ffffff",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353434",
+                        "surface-variant": "#353434",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e3e2e2",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-tint": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "24px"
+                    },
+                    "spacing": {
+                        "panel-padding": "32px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-margin-mobile": "20px",
+                        "container-margin": "48px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-accent": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-accent": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hairline-border { border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .chrome-text { background: linear-gradient(180deg, #FFFFFF 0%, #9A9A9A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        .liquid-hover:hover { border-color: rgba(255, 255, 255, 0.3); transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-collapse: collapse; }
+        .bento-cell { border: 1px solid rgba(255, 255, 255, 0.05); padding: 48px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
+<div class="max-w-[1280px] mx-auto px-container-margin py-base flex items-center justify-between">
+<span class="font-headline-lg text-[24px] font-bold tracking-tight text-primary">አጀብ Tech</span>
+<div class="hidden md:flex gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#">About Us</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#">FAQ</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#">Contact Us</a>
+</div>
+<button class="bg-primary text-background rounded-full px-6 py-2.5 font-label-bold hover:opacity-90 active:scale-95 transition-all">Get Started</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-40 pb-20 overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="z-10">
+<h1 class="font-display-lg text-display-lg lg:text-display-lg mb-8 leading-[1.05]">
+                    Innovative. Scalable.<br/>
+<span class="italic font-extrabold chrome-text">Secure</span> — Welcome<br/>
+                    To አጀብ tech
+                </h1>
+<button class="bg-primary text-background rounded-full px-10 py-4 font-label-bold text-lg hover:scale-105 transition-transform">Explore Now</button>
+<div class="mt-20 flex items-start gap-6 max-w-md">
+<div class="w-16 h-16 rounded-full overflow-hidden hairline-border bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<div>
+<p class="font-label-bold text-primary mb-1">Build Resilience With AI-Powered Tech Solutions</p>
+<p class="text-on-surface-variant text-sm">Empowering modern enterprises with future-ready architecture and intelligent defense systems.</p>
+</div>
+</div>
+</div>
+<div class="relative flex justify-center lg:justify-end">
+<div class="w-[500px] h-[500px] lg:w-[600px] lg:h-[600px] relative">
+<img class="w-full h-full object-contain" data-alt="A hyper-realistic 3D render of a glossy black liquid chrome sphere with intricate flowing reflective surfaces, set against a dark void. Cinematic lighting emphasizes high-contrast highlights and deep shadows, creating a sense of luxury and advanced technology. The sphere appears suspended in mid-air, surrounded by subtle lens flares and a deep charcoal atmospheric glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjplBdJ7jEDTsg_BmBwQjAtZS-wweZfEgIxAw1mxQfdXSZLsvUgMWrf2qhc_oatzZx1u1MRehrmOOyEQzDT9fb9duOVOrx8PiYBV_lGrSm-9czug2roSVekY_CtHsxlJLcU_uDwGEAL7rWTGrusBFwoQKNSqm4Oy97g2373Rgl0d8wLTxjw0PsNh8OJ-04uh21HHwb51ucufVtpmGAT--RDoZaSoCX3Jv3ZLPdbUsbfLkvddIFdqd2"/>
+<!-- Glass Cards -->
+<div class="absolute top-10 right-0 glass-card p-6 rounded-card w-48 animate-bounce" style="animation-duration: 4s;">
+<div class="flex justify-between items-start mb-2">
+<span class="font-display-lg text-3xl font-bold">150+</span>
+<span class="material-symbols-outlined text-primary">north_east</span>
+</div>
+<p class="text-xs text-on-surface-variant font-label-bold uppercase tracking-wider">Projects Delivered</p>
+</div>
+<div class="absolute bottom-20 -left-10 glass-card p-6 rounded-card w-48 animate-bounce" style="animation-duration: 5s; animation-delay: 1s;">
+<div class="flex justify-between items-start mb-2">
+<span class="font-display-lg text-3xl font-bold">98%</span>
+<span class="material-symbols-outlined text-primary">north_east</span>
+</div>
+<p class="text-xs text-on-surface-variant font-label-bold uppercase tracking-wider">Client Satisfaction</p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-container-margin mt-20 flex flex-wrap justify-between items-end border-t border-white/5 pt-12">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-2 border-background bg-surface-variant"></div>
+<div class="w-12 h-12 rounded-full border-2 border-background bg-surface-container"></div>
+<div class="w-12 h-12 rounded-full border-2 border-background bg-on-surface-variant"></div>
+<div class="w-12 h-12 rounded-full border-2 border-background bg-primary text-background flex items-center justify-center font-bold text-xs">+</div>
+</div>
+<div>
+<p class="font-label-bold text-primary">31K+</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Happy Customers</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 opacity-50">
+<span class="material-symbols-outlined animate-bounce">arrow_downward</span>
+<span class="text-[10px] font-label-bold uppercase tracking-[0.2em]">Scroll To Explore</span>
+</div>
+<p class="max-w-xs text-right font-label-bold text-on-surface-variant">
+                Empower Your Business With<br/>
+<span class="text-primary">Next-Gen Cyber Tech Solutions</span>
+</p>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap">
+<div class="max-w-[1280px] mx-auto px-container-margin">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-4">What We Do Best In<br/>The World Of Web & Tech</h2>
+</div>
+<div class="bg-surface hairline-border rounded-card overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<!-- Web Development -->
+<div class="p-panel-padding border-b md:border-r border-white/5 liquid-hover group">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
+<span class="material-symbols-outlined">code</span>
+</div>
+<h3 class="font-headline-accent text-xl mb-4">Web Development</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">We build high-performance, responsive websites tailored to your unique business needs and user expectations.</p>
+<a class="flex items-center gap-2 text-primary font-label-bold text-sm" href="#">Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- UI/UX Design -->
+<div class="p-panel-padding border-b lg:border-r border-white/5 liquid-hover group">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
+<span class="material-symbols-outlined">edit_square</span>
+</div>
+<h3 class="font-headline-accent text-xl mb-4">UI/UX Design</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Human-centered design focusing on intuitive navigation and stunning visuals to maximize user engagement.</p>
+<a class="flex items-center gap-2 text-primary font-label-bold text-sm" href="#">Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Full Stack -->
+<div class="p-panel-padding border-b border-white/5 liquid-hover group">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<h3 class="font-headline-accent text-xl mb-4">Full Stack Development</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">End-to-end solutions combining robust backends with seamless frontends for a complete digital experience.</p>
+<a class="flex items-center gap-2 text-primary font-label-bold text-sm" href="#">Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Web Security -->
+<div class="p-panel-padding border-b md:border-b-0 md:border-r border-white/5 liquid-hover group">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
+<span class="material-symbols-outlined">shield_lock</span>
+</div>
+<h3 class="font-headline-accent text-xl mb-4">Web Security</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Protecting your assets with enterprise-grade encryption and real-time threat detection systems.</p>
+<a class="flex items-center gap-2 text-primary font-label-bold text-sm" href="#">Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- AI Integration -->
+<div class="p-panel-padding border-b md:border-b-0 lg:border-r border-white/5 liquid-hover group">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<h3 class="font-headline-accent text-xl mb-4">AI Integration</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Embedding intelligent automation and predictive analytics into your existing web architecture.</p>
+<a class="flex items-center gap-2 text-primary font-label-bold text-sm" href="#">Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Tech Consulting -->
+<div class="p-panel-padding liquid-hover group">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
+<span class="material-symbols-outlined">checklist_rtl</span>
+</div>
+<h3 class="font-headline-accent text-xl mb-4">Tech Consulting</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Strategic guidance on technology stacks, scalability planning, and digital transformation roadmaps.</p>
+<a class="flex items-center gap-2 text-primary font-label-bold text-sm" href="#">Explore Services <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logo Section -->
+<section class="py-20 bg-surface/30">
+<div class="max-w-[1280px] mx-auto px-container-margin">
+<div class="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+<span class="text-2xl font-bold tracking-tighter">EARTH 2.0</span>
+<span class="text-2xl font-bold tracking-tighter italic">AVEN.</span>
+<span class="text-2xl font-bold tracking-tighter uppercase">acme</span>
+<span class="text-2xl font-bold tracking-tighter font-mono">{} CodeLab</span>
+<span class="text-2xl font-bold tracking-tighter flex items-center gap-2"><span class="material-symbols-outlined">change_history</span> FOXHUB</span>
+<span class="text-2xl font-bold tracking-tighter uppercase">acme</span>
+<span class="text-2xl font-bold tracking-tighter font-mono">{} CodeLab</span>
+<span class="text-2xl font-bold tracking-tighter flex items-center gap-2"><span class="material-symbols-outlined">change_history</span> FOXHUB</span>
+<span class="text-2xl font-bold tracking-tighter italic">AVEN.</span>
+<span class="text-2xl font-bold tracking-tighter">EARTH 2.0</span>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap">
+<div class="max-w-[1280px] mx-auto px-container-margin">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+<h2 class="font-headline-lg text-headline-lg max-w-xl">The Minds Behind The<br/>Code & Design</h2>
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden hairline-border">
+<img class="w-full h-full object-cover" data-alt="Close-up macro of a futuristic liquid metal sculpture, showing smooth flowing curves and intense specular highlights. The surface is high-gloss black with chrome-like reflections of a dark minimalist studio. Very cinematic, representing precision and technical mastery in the አጀብ Tech brand style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCka5rxglVpK8Cu3ah7D8b5d4tXL4QO7rZN3igp6ovmU8tFXTwt_7AIZh8pybjnTnDl6-cbVktO3NCGkJOnnc7lVh612UpBamfzQttPE6ETwPxblx4p0MFSBAcdB_e7RB7V9T-_7uZFy5Qc8nEfIHYoccvXAxFwQJo5UXIRqDJqhQNwxz0TWSKVimW2y8j02X7r2LrEpUWjARqOSGfQVbx18Xc4-EV_Mbq5QFnv1e6VP5D5unU0c9gq"/>
+</div>
+<div class="w-16 h-16 rounded-full overflow-hidden hairline-border">
+<img class="w-full h-full object-cover" data-alt="A detailed 3D spherical form composed of hundreds of interconnected hexagonal panels in a dark carbon fiber texture. The geometry is sharp and precise, symbolizing structured data and cybersecurity architecture. Subdued blue ambient light catches the edges of the panels against a pure black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJReFoiqNibM_QeVGKeSaRsntGdR96-uWHml-S3B2ANMHMIO9tzSXjMfi8JIk3bQ1o19XbzGnXCPLcpTNOpy_0_blcJ62r1-bTQZfQWMlq9x5T9ZLFKOvKeA5c3uYsH60zeeEG9pn2Ykwe4d-I4f6oStpIR3xVBHAT-2MyCmaWqCjrXp4tFKuljF93zncMdy60ta4CzrGkzYZXx21_GJ-phRFvXwuSUrWcPOh6xGDvj36gfD1InH9C"/>
+</div>
+<div class="w-16 h-16 rounded-full overflow-hidden hairline-border">
+<img class="w-full h-full object-cover" data-alt="A swirling mass of obsidian-like fluid captured in mid-movement, forming a dynamic and organic shape. The lighting is focused, casting long dramatic shadows and highlights that emphasize the viscosity and power of the substance. Minimalist and elite tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsl9TJ-eH29ALm8E5Af9PEXxP0AFKhAYdQRk7sYmZpz5x3j0PgZ1pKvCoJPVN2ulq4QWY3TEzuzOmJfjPwFTOCL_iU8z633zT2exOrnTGZRlPojOFWalaryDTBJJf1se0ZLEgpgGIbYiO-ytaud3XJLOI1dVO_ZxE6Xoi435mV7X5UxH6buKyehFTGHjFqCWK232N6ihh5DbfKCvmByjh633qfcIcSMl-5JCJEwuzMSpr5z7ottxmb"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col">
+<span class="font-display-lg text-5xl mb-2">200+</span>
+<span class="text-on-surface-variant font-label-bold uppercase text-xs tracking-widest">Projects Shipped</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-5xl mb-2">50+</span>
+<span class="text-on-surface-variant font-label-bold uppercase text-xs tracking-widest">Tech Experts</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-5xl mb-2">99%</span>
+<span class="text-on-surface-variant font-label-bold uppercase text-xs tracking-widest">On-Time Delivery</span>
+</div>
+</div>
+<div class="lg:col-span-2">
+<p class="text-body-lg text-on-surface-variant leading-relaxed mb-8">
+                        At አጀብ tech, we believe that technology should be as fluid as it is formidable. Our multidisciplinary team of engineers, designers, and strategists works at the intersection of innovation and security, crafting digital experiences that don't just solve problems—they define new standards of excellence.
+                    </p>
+<p class="text-body-md text-on-surface-variant/60">
+                        Founded on the principles of Ethiopian ingenuity and global tech standards, we bridge the gap between complex technical requirements and intuitive user outcomes. Whether it's a decentralized blockchain platform or a streamlined e-commerce hub, we build for the future.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Spotlight -->
+<section class="py-section-gap relative">
+<div class="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<img class="w-full h-auto max-w-md mx-auto" data-alt="An abstract 3D chrome orb with deep concentric grooves that create a hypnotic spiraling pattern. The surface is polished to a mirror finish, reflecting a dark, atmospheric environment. High-key light hits the top edge, creating a brilliant halo effect. The background is a velvety black void, giving the object immense weight and presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQi3Y7Lc65FkphzUmzTW9cCO5vjOFtU99kzeWHKY8CZwbuFdwQXoepe_vdEhxIrZXTKKLMZbzs9j5oB6pZSBSJ2CxJWtM2POW_LrJ306Mx3biqMuQdMvCRLh38Nbp7VrTmcZWZ_Qpq_2EJcuLRGCsdrO10wBda2LI42G8_lUNivmaBJOlTkTfokYGXrLWoyEgCK2-Woc_ajSmgyPocb9Lyu8z5jXUuB2P7gxjSdi-T5XFWb5qfA5eA"/>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8">More Than A Dev Agency — We're A Product Partner</h2>
+<button class="bg-primary text-background rounded-full px-8 py-3.5 font-label-bold mb-16 hover:opacity-90 transition-all">Explore Now</button>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+<div>
+<div class="w-10 h-10 bg-surface hairline-border flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined text-primary text-xl">language</span>
+</div>
+<h4 class="font-label-bold text-lg mb-3">Global Infrastructure</h4>
+<p class="text-on-surface-variant text-sm mb-6">Deploying applications on distributed cloud networks for zero latency and 99.9% uptime.</p>
+<a class="text-primary text-xs font-bold flex items-center gap-1" href="#">Explore Services <span class="material-symbols-outlined text-[10px]">arrow_forward</span></a>
+</div>
+<div>
+<div class="w-10 h-10 bg-surface hairline-border flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined text-primary text-xl">security</span>
+</div>
+<h4 class="font-label-bold text-lg mb-3">Military Grade Security</h4>
+<p class="text-on-surface-variant text-sm mb-6">Implementing advanced encryption protocols and biometric authentication for ironclad protection.</p>
+<a class="text-primary text-xs font-bold flex items-center gap-1" href="#">Explore Services <span class="material-symbols-outlined text-[10px]">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Numbered Showcase -->
+<section class="py-section-gap">
+<div class="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-3 gap-gutter items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Born For Code.<br/>Built For Security.</h2>
+<div class="flex items-center gap-4 opacity-50">
+<span class="material-symbols-outlined animate-bounce">arrow_downward</span>
+<span class="text-xs font-label-bold uppercase tracking-widest">Scroll To Explore</span>
+</div>
+</div>
+<div class="lg:col-span-2 bg-surface hairline-border rounded-card p-10 md:p-16 grid grid-cols-1 md:grid-cols-3 gap-12 relative overflow-hidden">
+<div class="flex flex-col">
+<span class="font-display-lg text-2xl mb-8 opacity-40">01.</span>
+<div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden bg-background hairline-border p-4">
+<img class="w-full h-full object-contain grayscale opacity-60" data-alt="A small 3D sphere made of interlocking dark metallic strands that form a complex web. The lighting is dramatic, casting sharp highlights on the individual strands while the core remains in deep shadow. This represents technical complexity and security webbing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3dF-N28dlokQWPn1M2TET4Rx-jrnikoi7i3oz7at0dbNW7GGlY28QwFWPzlphU4i5Kd8YWlp3S0744C_zbISRYPmdfwDxHtwOTzfKGOC4IoeewAMurgRkzg-88fzxXvqdubZdU9AsI9zfAonEmtFRPNL4NTrrp2hGwV2oYslcbBq6utBkXawWNYil4yFPP-9HgDVoxakwOnxgB80X73nnx42HBR1seohzmtLzPK0kY1xyRLBq2IZs"/>
+</div>
+<h4 class="font-label-bold text-center">Web Security</h4>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-2xl mb-8">02.</span>
+<div class="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden bg-background hairline-border p-2 scale-110 shadow-2xl shadow-primary/5">
+<img class="w-full h-full object-contain" data-alt="A medium-sized 3D sphere with a high-contrast geometric pattern of alternating black and white triangles. The surface is exceptionally glossy, reflecting its surroundings with razor-sharp clarity. It stands out as a focal point, symbolizing the precision of full-stack development." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy0J6aXBinkUZOpaqW3EIS2XU686uyU4fdsilbGUdLPvBy9kqrqJ846kUNoZm7Bcm3MKGdtfeAKgiTPhUslmvVbYf9QFuHDbDWDGaEv0LQNGWBcZV3XWuVzXHfEANea5eFMhXLcPM304-hrnJFu_NoA-046P-S2dAl0aFtaRxTm9bNg0dyjLzj6dtAHNvh27_aQjM7gXFjh8x8AmCyx-ulmtE4q34arTEhOT37LgX79mFSESbTCewX"/>
+</div>
+<h4 class="font-label-bold text-center text-primary">Full Stack Development</h4>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-2xl mb-8 opacity-40">03.</span>
+<div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden bg-background hairline-border p-4">
+<img class="w-full h-full object-contain grayscale opacity-60" data-alt="A minimalist 3D sphere with a soft velvet-like charcoal texture, featuring subtle glowing blue circuits pulsing underneath the surface. The aesthetic is futuristic and calm, representing advanced AI integration systems." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFZbrXWjjRFu7FcX6a4T5mchmp4w16gWgK6EA4kFwrwMZoKBoknC3NsBQCEVdiCZVHRE-gy4nEbpmmRrk2gqbCfTjXi63q7z4vk9wbZuR5rq2cu5PqFuF2YRAtl51GQDht8ImvurP842b9jtRghPw_1uWCjuk2he-f-Ojn6X0veAdkapFOtXtgik_yUODwIMEnO0C0U1CAZ0PwooiSaBV1qzU7CzihTt7LnA7FnSecn2byY8iZP1N3"/>
+</div>
+<h4 class="font-label-bold text-center">AI Integration</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies -->
+<section class="py-section-gap">
+<div class="max-w-[1280px] mx-auto px-container-margin">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-headline-lg text-headline-lg">Proof Over Promises —<br/>See What We've Built</h2>
+<button class="bg-primary text-background rounded-full px-8 py-3.5 font-label-bold hidden md:block">Explore Now</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 1 -->
+<div class="group relative bg-surface-dim hairline-border rounded-card overflow-hidden">
+<div class="h-[400px] w-full relative">
+<img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="A sprawling, detailed 3D abstract landscape made of polished black obsidian peaks and valleys. The scene is illuminated by a single intense white light source from above, creating deep cinematic shadows and brilliant highlights on the sharp edges. It evokes a feeling of scale, complexity, and massive data structures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLQSgyA9nyWjh7BJobwqZwYtt1owVrrTGrgI200gkwq7B_gwF7i3w8Ljjbm8sH8ayqiVTsp-cgWXZzp0odlQCB2FF7AlucktWnXVl7J-oaczQGuV4-GZzU_fF49fv6zuvPIMSG2dQddEoFF501uGTprb8caShBuAYm1Xcg6P-7KYlu5E7dOWkQHXqLd_kPmCjSBNFesiAHKP35ihjXWb2sg-vcT8iDpC2GYKhsbD-6rHq2i_uBwoIa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-accent text-2xl mb-2">Nexus Cyber Core</h3>
+<p class="text-on-surface-variant text-sm max-w-xs mb-6">A centralized security dashboard for monitoring multi-cloud enterprise ecosystems.</p>
+<button class="bg-primary text-background rounded-full px-6 py-2.5 font-label-bold text-sm">Explore Now</button>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative bg-surface-dim hairline-border rounded-card overflow-hidden">
+<div class="h-[400px] w-full relative">
+<img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="A crystalline geometric sphere exploding into thousands of sharp glass shards that remain suspended in a dark vacuum. Each shard reflects a tiny pinpoint of light, creating a starry, celestial effect. The overall feeling is one of high-speed capture, frozen motion, and fragmented brilliance. Modern tech art aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAGljIFqGyI92pospk2L-UUF1ab4GwYtJ5xKXHgLWUIVjJjikwowX2OWx7b75YRStdbdJoiHIPQyscdWV4lQtm2GfvwZwRHI94W4JzxE5PlkiEPhGclTDMJRpJ8fyVBC41E3qG5B7V9gERCfFpqauOUfJ1qwwtw64d8x7zMVKXW6FUXkl9zWowzgbnzP-ctexC3b0CvaOl5dvEEmSkxyZkVT41wy0dhUYvnG93_WwRbgjhCMbADjGc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-accent text-2xl mb-2">Aura Fintech App</h3>
+<p class="text-on-surface-variant text-sm max-w-xs mb-6">High-frequency trading platform built with Rust and React for ultimate performance.</p>
+<button class="bg-primary text-background rounded-full px-6 py-2.5 font-label-bold text-sm">Explore Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap">
+<div class="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative flex justify-center order-2 lg:order-1">
+<div class="w-[450px] h-[450px] relative">
+<img class="w-full h-full object-contain" data-alt="A massive, detailed 3D orb consisting of layered translucent rings like a futuristic gyroscope. The rings are made of dark smoked glass with illuminated white edges that pulse gently. In the center sits a dense, glowing white core. The background is pitch black, making the glowing internal core and glass reflections pop with incredible clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANbxpJuK5l39Gg6zp55Ao6RttH7EOwsS7pAWp8Low28tYJfm4I-WcXR9vdHPBF_pZypKTNMsTiRLFw9C7nhaCQJyiyXYzgtZMZ3N9EUJ-5t8QfpIpNUUN9w8uyuA1MIErADqn5Sx4jWpAPU1ArU3BEZjnnhCxcS01oEPjey_O02rQ0o-Pzsl4HznH3J7SHdUc6pfhTKfteDwRQsMTkSecZgPnYMlvyCoIOiyD95WTtYAUHB8nDjPqX"/>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline-lg text-headline-lg mb-12">Game-Changing Tools<br/>To Outsmart The Bad Guys</h2>
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="border-b border-white/10 pb-6 group cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-label-bold text-lg">1. What is አጀብ Tech — Cyber Tech Solutions?</h4>
+<span class="material-symbols-outlined text-primary group-[.active]:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-[.active]:block transition-all">
+<p class="text-on-surface-variant text-sm leading-relaxed">አጀብ Tech is a premium technology agency specializing in high-performance web development, cybersecurity, and AI integration. We provide end-to-end digital solutions for modern enterprises seeking scalable and secure architecture.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border-b border-white/10 pb-6 group cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-label-bold text-lg">2. Who Are አጀብ Tech' Services For?</h4>
+<span class="material-symbols-outlined text-primary group-[.active]:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-[.active]:block transition-all">
+<p class="text-on-surface-variant text-sm leading-relaxed">Our services are tailored for tech startups, established enterprises, and government agencies that require high-level technical expertise, uncompromising security, and innovative user experiences.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border-b border-white/10 pb-6 group cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-label-bold text-lg">3. Can አጀብ Tech Integrate With My Existing Systems?</h4>
+<span class="material-symbols-outlined text-primary group-[.active]:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-[.active]:block transition-all">
+<p class="text-on-surface-variant text-sm leading-relaxed">Yes, we specialize in seamless legacy system migration and API integrations. We ensure your new technology stack works in harmony with your current infrastructure while providing modernization where needed.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border-b border-white/10 pb-6 group cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-label-bold text-lg">4. What's The Typical Process To Get Started?</h4>
+<span class="material-symbols-outlined text-primary group-[.active]:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-[.active]:block transition-all">
+<p class="text-on-surface-variant text-sm leading-relaxed">Our process begins with a deep-dive discovery session, followed by technical architecture planning, rapid prototyping, agile development, and a rigorous security audit before final deployment.</p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="border-b border-white/10 pb-6 group cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-label-bold text-lg">5. Do You Offer Custom Solutions Or Only Fixed Packages?</h4>
+<span class="material-symbols-outlined text-primary group-[.active]:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-[.active]:block transition-all">
+<p class="text-on-surface-variant text-sm leading-relaxed">We provide highly customized solutions built specifically for your business goals. While we have standardized frameworks to accelerate development, every project is uniquely engineered.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface w-full pt-section-gap pb-container-margin border-t border-white/5">
+<div class="max-w-[1280px] mx-auto px-container-margin">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">አጀብ Tech</span>
+<button class="bg-primary text-background rounded-full px-8 py-3.5 font-label-bold hover:opacity-90 active:scale-95 transition-all">Get In Touch</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-24">
+<div>
+<h5 class="text-primary font-label-bold mb-8 uppercase tracking-widest text-xs">Menu</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Why Choose</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Portfolio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-primary font-label-bold mb-8 uppercase tracking-widest text-xs">Link</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Cookies Settings</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Support Center</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-primary font-label-bold mb-8 uppercase tracking-widest text-xs">Contact</h5>
+<ul class="space-y-4">
+<li class="text-on-surface-variant text-sm">Bole, Addis Ababa, Ethiopia</li>
+<li class="text-on-surface-variant text-sm">+251 900 000 000</li>
+<li class="text-on-surface-variant text-sm">hello@ajebtech.com</li>
+</ul>
+</div>
+<div>
+<h5 class="text-primary font-label-bold mb-8 uppercase tracking-widest text-xs">Social Media</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm flex items-center gap-2" href="#">Facebook</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm flex items-center gap-2" href="#">Twitter / X</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm flex items-center gap-2" href="#">LinkedIn</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all text-sm flex items-center gap-2" href="#">Instagram</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-xs font-body-md">© 2024 አጀብ Tech. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-xs text-on-surface-variant hover:text-primary" href="#">Legal</a>
+<a class="text-xs text-on-surface-variant hover:text-primary" href="#">Compliance</a>
+<a class="text-xs text-on-surface-variant hover:text-primary" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add subtle parallax to spheres
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxImages = document.querySelectorAll('img[data-alt*="3D"]');
+            parallaxImages.forEach(img => {
+                const speed = 0.05;
+                img.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body></html>
