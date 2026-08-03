@@ -7,14 +7,14 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
         <div className="z-10">
           <h1 className="text-display-lg mb-8 leading-[1.05]">
-            Innovative. Scalable.<br/>
-            <span className="italic font-extrabold chrome-text">Secure</span> — Welcome<br/>
+            Innovative. Scalable.<br />
+            <span className="italic font-extrabold chrome-text">Secure</span> — Welcome<br />
             To አጀብ tech
           </h1>
           <button className="bg-primary text-background rounded-full px-10 py-4 font-label-bold text-lg hover:scale-105 transition-transform">
             Explore Now
           </button>
-          
+
           <div className="mt-20 flex items-start gap-6 max-w-md">
             <div className="w-16 h-16 rounded-full overflow-hidden hairline-border bg-surface flex items-center justify-center shrink-0">
               <Brain className="text-primary w-8 h-8" />
@@ -25,13 +25,16 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        
+
         <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
-          <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] relative">
-            <Image 
-              className="object-contain" 
-              alt="A hyper-realistic 3D render of a glossy black liquid chrome sphere" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjplBdJ7jEDTsg_BmBwQjAtZS-wweZfEgIxAw1mxQfdXSZLsvUgMWrf2qhc_oatzZx1u1MRehrmOOyEQzDT9fb9duOVOrx8PiYBV_lGrSm-9czug2roSVekY_CtHsxlJLcU_uDwGEAL7rWTGrusBFwoQKNSqm4Oy97g2373Rgl0d8wLTxjw0PsNh8OJ-04uh21HHwb51ucufVtpmGAT--RDoZaSoCX3Jv3ZLPdbUsbfLkvddIFdqd2"
+          <div className="w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] lg:w-[750px] lg:h-[750px] relative">
+            {/* Glow Background */}
+            <div className="absolute inset-20 bg-primary/20 blur-[120px] rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+            
+            <Image
+              className="object-cover rounded-full scale-110 drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:drop-shadow-[0_0_60px_rgba(255,255,255,0.4)] transition-all duration-700 relative z-10"
+              alt="A hyper-realistic 3D render of a glossy black liquid chrome sphere"
+              src="/hero1.png"
               fill
               priority
             />
@@ -53,7 +56,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      
+
       <div className="max-w-[1280px] mx-auto px-container-margin mt-20 flex flex-col md:flex-row justify-between items-start md:items-end border-t border-white/5 pt-12 gap-8 md:gap-0">
         <div className="flex items-center gap-4">
           <div className="flex -space-x-4">
@@ -67,14 +70,14 @@ export default function Hero() {
             <p className="text-[10px] text-on-surface-variant uppercase tracking-widest">Happy Customers</p>
           </div>
         </div>
-        
+
         <div className="flex flex-col items-center gap-2 opacity-50 self-center">
           <ArrowDown className="animate-bounce w-5 h-5" />
           <span className="text-[10px] font-label-bold uppercase tracking-[0.2em]">Scroll To Explore</span>
         </div>
-        
+
         <p className="max-w-xs md:text-right font-label-bold text-on-surface-variant">
-          Empower Your Business With<br/>
+          Empower Your Business With<br />
           <span className="text-primary">Next-Gen Cyber Tech Solutions</span>
         </p>
       </div>
