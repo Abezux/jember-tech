@@ -9,7 +9,7 @@ export default function Hero() {
           <h1 className="text-display-lg mb-8 leading-[1.05]">
             Innovative. Scalable.<br />
             <span className="italic font-extrabold chrome-text">Secure</span> — Welcome<br />
-            To አጀብ tech
+            To Jember tech
           </h1>
           <button className="bg-primary text-background rounded-full px-10 py-4 font-label-bold text-lg hover:scale-105 transition-transform">
             Explore Now
