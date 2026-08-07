@@ -1,16 +1,21 @@
 import Image from "next/image";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function CaseStudies() {
   return (
     <section className="py-section-gap" id="portfolio">
       <div className="max-w-[1280px] mx-auto px-container-margin">
         <div className="flex justify-between items-end mb-16">
-          <h2 className="text-headline-lg">Proof Over Promises —<br/>See What We've Built</h2>
-          <button className="bg-primary text-background rounded-full px-8 py-3.5 font-label-bold hidden md:block">Explore Now</button>
+          <h2 className="text-headline-lg">Concept Work —<br/>A Preview Of What We Build</h2>
+          <button className="btn-primary px-8 py-3.5 hidden md:block">See The Concept</button>
         </div>
+        {/* TODO: replace with real case studies as we complete client projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
           {/* Project 1 */}
-          <div className="group relative bg-surface-dim hairline-border rounded-card overflow-hidden">
+          <ScrollReveal delay={0.1} className="group relative bg-surface-dim hairline-border rounded-card overflow-hidden">
+            <div className="absolute top-6 right-6 bg-surface/50 backdrop-blur-md hairline-border px-4 py-1.5 rounded-full text-[10px] font-label-bold uppercase tracking-widest text-on-surface z-20">
+              Concept Project
+            </div>
             <div className="h-[400px] w-full relative">
               <Image 
                 className="object-cover grayscale transition-transform duration-700 group-hover:scale-105" 
@@ -24,12 +29,15 @@ export default function CaseStudies() {
               <div>
                 <h3 className="text-headline-accent text-2xl mb-2">Nexus Cyber Core</h3>
                 <p className="text-on-surface-variant text-sm max-w-xs mb-6">A centralized security dashboard for monitoring multi-cloud enterprise ecosystems.</p>
-                <button className="bg-primary text-background rounded-full px-6 py-2.5 font-label-bold text-sm">Explore Now</button>
+                <button className="btn-primary px-6 py-2.5 text-sm">See The Concept</button>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
           {/* Project 2 */}
-          <div className="group relative bg-surface-dim hairline-border rounded-card overflow-hidden">
+          <ScrollReveal delay={0.2} className="group relative bg-surface-dim hairline-border rounded-card overflow-hidden">
+            <div className="absolute top-6 right-6 bg-surface/50 backdrop-blur-md hairline-border px-4 py-1.5 rounded-full text-[10px] font-label-bold uppercase tracking-widest text-on-surface z-20">
+              Concept Project
+            </div>
             <div className="h-[400px] w-full relative">
               <Image 
                 className="object-cover grayscale transition-transform duration-700 group-hover:scale-105" 
@@ -43,10 +51,10 @@ export default function CaseStudies() {
               <div>
                 <h3 className="text-headline-accent text-2xl mb-2">Aura Fintech App</h3>
                 <p className="text-on-surface-variant text-sm max-w-xs mb-6">High-frequency trading platform built with Rust and React for ultimate performance.</p>
-                <button className="bg-primary text-background rounded-full px-6 py-2.5 font-label-bold text-sm">Explore Now</button>
+                <button className="btn-primary px-6 py-2.5 text-sm">See The Concept</button>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

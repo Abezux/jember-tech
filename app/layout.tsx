@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "አጀብ Tech | Innovative. Scalable. Secure.",
+  title: "Jember Tech | Innovative. Scalable. Secure.",
   description: "Premium tech solutions including web development, UI/UX, full stack, web security, and AI.",
 };
 

@@ -1,10 +1,14 @@
+import { ContactDialog } from "@/components/ContactDialog";
+
 export default function Footer() {
   return (
     <footer className="bg-surface w-full pt-section-gap pb-container-margin border-t border-white/5" id="contact">
       <div className="max-w-[1280px] mx-auto px-container-margin">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
-          <span className="text-headline-lg font-bold text-primary">አጀብ Tech</span>
-          <button className="bg-primary text-background rounded-full px-8 py-3.5 font-label-bold hover:opacity-90 active:scale-95 transition-all">Get In Touch</button>
+          <span className="text-headline-lg font-bold text-primary">Jember</span>
+          <ContactDialog>
+            <button className="btn-primary px-8 py-3.5">Get In Touch</button>
+          </ContactDialog>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-24">
@@ -32,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="text-on-surface-variant text-sm">Bole, Addis Ababa, Ethiopia</li>
               <li className="text-on-surface-variant text-sm">+251 900 000 000</li>
-              <li className="text-on-surface-variant text-sm">hello@ajebtech.com</li>
+              <li className="text-on-surface-variant text-sm">hello@jembertech.com</li>
             </ul>
           </div>
           <div>
@@ -47,7 +51,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-on-surface-variant text-xs">© 2024 አጀብ Tech. All rights reserved.</p>
+          <p className="text-on-surface-variant text-xs">© 2024 Jember Tech. All rights reserved.</p>
           <div className="flex gap-8">
             <a className="text-xs text-on-surface-variant hover:text-primary" href="#">Legal</a>
             <a className="text-xs text-on-surface-variant hover:text-primary" href="#">Compliance</a>

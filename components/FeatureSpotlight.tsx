@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Globe, ShieldCheck, ArrowRight } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function FeatureSpotlight() {
   return (
@@ -15,9 +16,9 @@ export default function FeatureSpotlight() {
         </div>
         <div>
           <h2 className="text-headline-lg mb-8">More Than A Dev Agency — We're A Product Partner</h2>
-          <button className="bg-primary text-background rounded-full px-8 py-3.5 font-label-bold mb-16 hover:opacity-90 transition-all">Explore Now</button>
+          <button className="btn-primary px-8 py-3.5 mb-16">Explore Now</button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-            <div>
+            <ScrollReveal delay={0.1}>
               <div className="w-10 h-10 bg-surface hairline-border flex items-center justify-center rounded-lg mb-6">
                 <Globe className="text-primary w-5 h-5" />
               </div>
@@ -26,8 +27,8 @@ export default function FeatureSpotlight() {
               <a className="text-primary text-xs font-bold flex items-center gap-1" href="#">
                 Explore Services <ArrowRight className="w-3 h-3" />
               </a>
-            </div>
-            <div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
               <div className="w-10 h-10 bg-surface hairline-border flex items-center justify-center rounded-lg mb-6">
                 <ShieldCheck className="text-primary w-5 h-5" />
               </div>
@@ -36,7 +37,7 @@ export default function FeatureSpotlight() {
               <a className="text-primary text-xs font-bold flex items-center gap-1" href="#">
                 Explore Services <ArrowRight className="w-3 h-3" />
               </a>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

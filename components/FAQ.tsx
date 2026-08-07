@@ -1,23 +1,24 @@
-import Image from "next/image";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function FAQ() {
   const faqs = [
     {
-      q: "1. What is አጀብ Tech — Cyber Tech Solutions?",
-      a: "አጀብ Tech is a premium technology agency specializing in high-performance web development, cybersecurity, and AI integration. We provide end-to-end digital solutions for modern enterprises seeking scalable and secure architecture."
+      q: "1. What is Jember Tech — Cyber Tech Solutions?",
+      a: "Jember Tech is a premium technology agency specializing in high-performance web development, cybersecurity, and AI integration. We provide end-to-end digital solutions for modern enterprises seeking scalable and secure architecture."
     },
     {
-      q: "2. Who Are አጀብ Tech' Services For?",
+      q: "2. Who Are Jember Tech' Services For?",
       a: "Our services are tailored for tech startups, established enterprises, and government agencies that require high-level technical expertise, uncompromising security, and innovative user experiences."
     },
     {
-      q: "3. Can አጀብ Tech Integrate With My Existing Systems?",
+      q: "3. Can Jember Tech Integrate With My Existing Systems?",
       a: "Yes, we specialize in seamless legacy system migration and API integrations. We ensure your new technology stack works in harmony with your current infrastructure while providing modernization where needed."
     },
     {
@@ -32,24 +33,15 @@ export default function FAQ() {
 
   return (
     <section className="py-section-gap" id="faq">
-      <div className="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div className="relative flex justify-center order-2 lg:order-1">
-          <div className="w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] relative">
-            <Image 
-              className="object-contain" 
-              fill 
-              alt="A massive, detailed 3D orb consisting of layered translucent rings" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuANbxpJuK5l39Gg6zp55Ao6RttH7EOwsS7pAWp8Low28tYJfm4I-WcXR9vdHPBF_pZypKTNMsTiRLFw9C7nhaCQJyiyXYzgtZMZ3N9EUJ-5t8QfpIpNUUN9w8uyuA1MIErADqn5Sx4jWpAPU1ArU3BEZjnnhCxcS01oEPjey_O02rQ0o-Pzsl4HznH3J7SHdUc6pfhTKfteDwRQsMTkSecZgPnYMlvyCoIOiyD95WTtYAUHB8nDjPqX"
-            />
-          </div>
+      <div className="max-w-[1280px] mx-auto px-container-margin max-w-4xl">
+        <div className="text-center mb-16">
+          <h2 className="text-headline-lg">Frequently Asked Questions</h2>
         </div>
         
-        <div className="order-1 lg:order-2">
-          <h2 className="text-headline-lg mb-12">Game-Changing Tools<br/>To Outsmart The Bad Guys</h2>
-          
-          <Accordion className="w-full space-y-2">
-            {faqs.map((faq, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="border-b border-white/10 pb-2">
+        <Accordion className="w-full space-y-4">
+          {faqs.map((faq, idx) => (
+            <ScrollReveal key={idx} delay={idx * 0.1}>
+              <AccordionItem value={`item-${idx}`} className="not-last:border-b bg-surface hairline-border rounded-card px-6 py-2 border-b-0 data-[state=open]:border-primary/20 transition-all">
                 <AccordionTrigger className="font-label-bold text-lg hover:no-underline hover:text-primary transition-colors text-left">
                   {faq.q}
                 </AccordionTrigger>
@@ -57,9 +49,9 @@ export default function FAQ() {
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+            </ScrollReveal>
+          ))}
+        </Accordion>
       </div>
     </section>
   );

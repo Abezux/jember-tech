@@ -102,6 +102,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
   body {
     @apply bg-background text-on-surface font-inter overflow-x-hidden selection:bg-primary selection:text-background antialiased;
   }
@@ -121,6 +126,7 @@
   }
   .liquid-hover:hover {
     border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   }
   ::-webkit-scrollbar { width: 8px; }
@@ -162,5 +168,16 @@
       font-size: 48px;
       letter-spacing: -0.03em;
     }
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-background rounded-full active:scale-95 transition-all duration-300 ease-out;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-[0_4px_20px_rgba(255,255,255,0.2)];
   }
 }
