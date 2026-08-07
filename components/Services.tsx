@@ -21,7 +21,7 @@ export default function Services() {
                 <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-all">
                   <svc.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-headline-accent text-xl mb-4">{svc.title}</h3>
+                <h3 className="text-xl mb-4">{svc.title}</h3>
                 <p className="text-on-surface-variant text-sm mb-8 leading-relaxed">{svc.shortDesc}</p>
                 <Link 
                   href={`/services/${svc.slug}`} 

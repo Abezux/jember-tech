@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import {
   Accordion,
@@ -57,9 +58,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className="text-on-surface-variant text-lg max-w-3xl leading-relaxed mb-10">
             {service.longDesc}
           </p>
-          <button className="btn-primary px-10 py-4 text-lg">
+          <Link href={`/contact?service=${service.slug}`} className="btn-primary px-10 py-4 text-lg inline-block">
             Get a Quote
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -97,16 +98,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="text-center mb-16">
             <h2 className="text-headline-lg">Our Process</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 bg-surface hairline-border rounded-card p-10 lg:p-16 relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 bg-surface hairline-border rounded-card p-10 lg:p-16 relative overflow-hidden">
             {service.process.map((step, idx) => (
               <ScrollReveal key={idx} delay={idx * 0.1} className="flex flex-col relative z-10">
-                <span className="text-display-lg text-2xl mb-6 opacity-40">
+                <span className="text-2xl mb-6 opacity-40">
                   {(idx + 1).toString().padStart(2, '0')}.
                 </span>
                 <div className="h-px w-full bg-white/10 mb-6 relative">
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary" />
                 </div>
-                <h4 className="font-label-bold text-primary">{step}</h4>
+                <h4 className="font-label-bold text-primary mb-3">{step.title}</h4>
+                <p className="text-on-surface-variant text-sm leading-relaxed">{step.description}</p>
               </ScrollReveal>
             ))}
           </div>
@@ -143,9 +145,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="text-on-surface-variant mb-10 max-w-xl relative z-10">
               Let's discuss how our technical expertise can accelerate your business objectives and solve your most complex challenges.
             </p>
-            <button className="btn-primary px-10 py-4 text-lg relative z-10">
+            <Link href={`/contact?service=${service.slug}`} className="btn-primary px-10 py-4 text-lg relative z-10 inline-block">
               Get In Touch
-            </button>
+            </Link>
           </div>
         </div>
       </section>

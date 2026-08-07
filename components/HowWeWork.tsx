@@ -41,7 +41,7 @@ export default function HowWeWork() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 bg-surface hairline-border rounded-card p-10 lg:p-16 relative overflow-hidden">
           {steps.map((step, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1} className="flex flex-col relative z-10">
-              <span className="text-display-lg text-2xl mb-6 opacity-40">
+              <span className="text-2xl mb-6 opacity-40">
                 {(idx + 1).toString().padStart(2, '0')}.
               </span>
               <div className="h-px w-full bg-white/10 mb-6 relative">

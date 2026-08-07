@@ -1,4 +1,4 @@
-import { ContactDialog } from "@/components/ContactDialog";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -6,24 +6,24 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-container-margin">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
           <span className="text-headline-lg font-bold text-primary">Jember</span>
-          <ContactDialog>
-            <button className="btn-primary px-8 py-3.5">Get In Touch</button>
-          </ContactDialog>
+          <Link href="/contact" className="btn-primary px-8 py-3.5 inline-block">Get In Touch</Link>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-24">
           <div>
             <h5 className="text-primary font-label-bold mb-8 uppercase tracking-widest text-xs">Menu</h5>
             <ul className="space-y-4">
-              <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">About Us</a></li>
-              <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Services</a></li>
+              <li><Link className="text-on-surface-variant hover:text-primary transition-all text-sm" href="/#about">About Us</Link></li>
+              <li><Link className="text-on-surface-variant hover:text-primary transition-all text-sm" href="/#services">Services</Link></li>
+              {/* TODO: needs real destinations later */}
               <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Why Choose</a></li>
-              <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Portfolio</a></li>
+              <li><Link className="text-on-surface-variant hover:text-primary transition-all text-sm" href="/#portfolio">Portfolio</Link></li>
               <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Blog</a></li>
             </ul>
           </div>
           <div>
             <h5 className="text-primary font-label-bold mb-8 uppercase tracking-widest text-xs">Link</h5>
+            {/* TODO: needs real legal pages and social links */}
             <ul className="space-y-4">
               <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Privacy Policy</a></li>
               <li><a className="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Terms of Service</a></li>
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-on-surface-variant text-xs">© 2024 Jember Tech. All rights reserved.</p>
+          <p className="text-on-surface-variant text-xs">© 2026 Jember Tech. All rights reserved.</p>
           <div className="flex gap-8">
             <a className="text-xs text-on-surface-variant hover:text-primary" href="#">Legal</a>
             <a className="text-xs text-on-surface-variant hover:text-primary" href="#">Compliance</a>

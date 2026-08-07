@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { ContactDialog } from "@/components/ContactDialog";
+import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 // TODO: replace placeholder prices once packages are finalized
@@ -16,6 +16,7 @@ const pricingPlans = [
     ],
     ctaText: "Get Started",
     popular: false,
+    slug: "web-development"
   },
   {
     name: "Growth",
@@ -30,6 +31,7 @@ const pricingPlans = [
     ],
     ctaText: "Get Started",
     popular: true,
+    slug: "full-stack-development"
   },
   {
     name: "Enterprise",
@@ -45,6 +47,7 @@ const pricingPlans = [
     ],
     ctaText: "Book a Call",
     popular: false,
+    slug: ""
   }
 ];
 
@@ -59,7 +62,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {pricingPlans.map((plan, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1} className={`flex flex-col relative glass-card rounded-card p-10 ${plan.popular ? 'border-primary/50 scale-105 shadow-[0_0_40px_rgba(255,255,255,0.05)]' : 'hairline-border'}`}>
               {plan.popular && (
@@ -69,9 +72,9 @@ export default function Pricing() {
               )}
               
               <div className="mb-8">
-                <h3 className="text-headline-accent text-2xl mb-2">{plan.name}</h3>
+                <h3 className="text-2xl mb-2">{plan.name}</h3>
                 <p className="text-on-surface-variant text-sm mb-6 h-10">{plan.desc}</p>
-                <div className="text-display-lg text-4xl mb-2">{plan.price}</div>
+                <div className="text-4xl mb-2">{plan.price}</div>
               </div>
 
               <div className="flex-grow flex flex-col gap-4 mb-10">
@@ -85,11 +88,9 @@ export default function Pricing() {
                 ))}
               </div>
 
-              <ContactDialog>
-                <button className={`w-full py-4 text-sm font-label-bold rounded-full transition-all active:scale-95 ${plan.popular ? 'bg-primary text-background hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:-translate-y-0.5' : 'bg-surface hairline-border hover:border-primary/30 text-primary'}`}>
-                  {plan.ctaText}
-                </button>
-              </ContactDialog>
+              <Link href={plan.slug ? `/contact?service=${plan.slug}` : "/contact"} className={`w-full py-4 text-sm font-label-bold rounded-full transition-all active:scale-95 inline-block text-center ${plan.popular ? 'bg-primary text-background hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:-translate-y-0.5' : 'bg-surface hairline-border hover:border-primary/30 text-primary'}`}>
+                {plan.ctaText}
+              </Link>
             </ScrollReveal>
           ))}
         </div>

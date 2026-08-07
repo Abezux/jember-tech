@@ -1,53 +1,124 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { ContactDialog } from "@/components/ContactDialog";
+import Link from "next/link";
+
+import { usePathname } from "next/navigation";
+
+const NAV_LINKS = [
+  { id: "home", label: "Home", href: "/" },
+  { id: "services", label: "Services", href: "/#services" },
+  { id: "about", label: "About Us", href: "/#about" },
+  { id: "portfolio", label: "Portfolio", href: "/#portfolio" },
+  { id: "faq", label: "FAQ", href: "/#faq" },
+  { id: "contact", label: "Contact Us", href: "/#contact" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // init
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (pathname === "/contact") {
+      setActiveSection("contact");
+      return;
+    }
+    if (pathname.startsWith("/services")) {
+      setActiveSection("services");
+      return;
+    }
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    const ids = ["home", "services", "about", "portfolio", "faq", "contact"];
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [pathname]);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-white/10" : "bg-transparent border-b border-transparent"}`}>
       <div className="max-w-[1280px] mx-auto px-container-margin py-base flex items-center justify-between">
-        <span className="font-headline-lg text-[24px] font-bold tracking-tight text-primary">Jember</span>
+        <Link href="/" className="font-headline-lg text-[24px] font-bold tracking-tight text-primary">Jember</Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
-          <a className="text-primary font-bold border-b-2 border-primary pb-1 text-label-md" href="#">Home</a>
-          <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-label-md" href="#services">Services</a>
-          <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-label-md" href="#about">About Us</a>
-          <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-label-md" href="#portfolio">Portfolio</a>
-          <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-label-md" href="#faq">FAQ</a>
-          <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-label-md" href="#contact">Contact Us</a>
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.id}
+              href={link.href}
+              className={`text-label-md transition-colors duration-300 pb-1 border-b-2 ${
+                activeSection === link.id
+                  ? "text-primary font-bold border-primary"
+                  : "text-on-surface-variant font-medium hover:text-primary border-transparent"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
         
         <div className="hidden md:block">
-          <ContactDialog>
-            <button className="btn-primary px-6 py-2.5 text-sm">Get Started</button>
-          </ContactDialog>
+          <Link href="/contact" className="btn-primary px-6 py-2.5 text-sm inline-block">Get Started</Link>
         </div>
 
         {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger render={<Button variant="ghost" size="icon" className="text-on-surface" />}>
-              <Menu />
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="text-on-surface w-11 h-11" />}>
+              <Menu className="w-6 h-6" />
             </SheetTrigger>
             <SheetContent side="right" className="bg-surface border-l border-white/10">
               <SheetTitle className="sr-only">Menu</SheetTitle>
               <div className="flex flex-col gap-6 mt-12">
-                <a onClick={() => setOpen(false)} className="text-primary font-bold text-label-md" href="#">Home</a>
-                <a onClick={() => setOpen(false)} className="text-on-surface-variant font-medium text-label-md" href="#services">Services</a>
-                <a onClick={() => setOpen(false)} className="text-on-surface-variant font-medium text-label-md" href="#about">About Us</a>
-                <a onClick={() => setOpen(false)} className="text-on-surface-variant font-medium text-label-md" href="#portfolio">Portfolio</a>
-                <a onClick={() => setOpen(false)} className="text-on-surface-variant font-medium text-label-md" href="#faq">FAQ</a>
-                <a onClick={() => setOpen(false)} className="text-on-surface-variant font-medium text-label-md" href="#contact">Contact Us</a>
-                <ContactDialog>
-                  <button onClick={() => setOpen(false)} className="btn-primary px-6 py-2.5 mt-4 w-full text-sm">Get Started</button>
-                </ContactDialog>
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.id}
+                    onClick={() => setOpen(false)}
+                    className={`text-label-md ${
+                      activeSection === link.id
+                        ? "text-primary font-bold"
+                        : "text-on-surface-variant font-medium"
+                    }`}
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary px-6 py-2.5 mt-4 w-full text-sm text-center block">Get Started</Link>
               </div>
             </SheetContent>
           </Sheet>

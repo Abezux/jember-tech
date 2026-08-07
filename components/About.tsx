@@ -13,15 +13,15 @@ export default function About() {
           <div className="flex flex-col gap-10">
             {/* TODO: revisit once we have real project history */}
             <ScrollReveal delay={0.1} className="flex flex-col">
-              <span className="text-display-lg text-5xl mb-2">2026</span>
+              <span className="text-5xl mb-2">2026</span>
               <span className="text-on-surface-variant font-label-bold uppercase text-xs tracking-widest">Founded</span>
             </ScrollReveal>
             <ScrollReveal delay={0.2} className="flex flex-col">
-              <span className="text-display-lg text-5xl mb-2">2</span>
+              <span className="text-5xl mb-2">2</span>
               <span className="text-on-surface-variant font-label-bold uppercase text-xs tracking-widest">Founders</span>
             </ScrollReveal>
             <ScrollReveal delay={0.3} className="flex flex-col">
-              <span className="text-display-lg text-5xl mb-2">Full-Stack</span>
+              <span className="text-5xl mb-2">Full-Stack</span>
               <span className="text-on-surface-variant font-label-bold uppercase text-xs tracking-widest">Security Specialists</span>
             </ScrollReveal>
           </div>

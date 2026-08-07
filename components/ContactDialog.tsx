@@ -34,7 +34,7 @@ export function ContactDialog({ children }: { children: React.ReactElement }) {
       <DialogTrigger render={children} />
       <DialogContent className="bg-surface hairline-border rounded-card border-white/10 sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-headline-accent text-2xl mb-2 text-primary">
+          <DialogTitle className="text-2xl mb-2 text-primary">
             {submitted ? "Message Received" : "Get In Touch"}
           </DialogTitle>
         </DialogHeader>

@@ -63,11 +63,10 @@
   --color-outline-variant: #444748;
 
   /* Spacing */
-  --spacing-container-margin: 48px;
-  --spacing-container-margin-mobile: 20px;
+  --spacing-container-margin: clamp(20px, 5vw, 48px);
   --spacing-gutter: 24px;
   --spacing-base: 8px;
-  --spacing-section-gap: 160px;
+  --spacing-section-gap: clamp(64px, 12vw, 160px);
   --spacing-panel-padding: 32px;
 
   /* Border Radius */
@@ -136,19 +135,19 @@
 
 @layer utilities {
   .text-display-lg {
-    font-size: 72px;
+    font-size: clamp(36px, 6vw + 1rem, 72px);
     line-height: 1.1;
     letter-spacing: -0.04em;
     font-weight: 700;
   }
   .text-headline-lg {
-    font-size: 40px;
+    font-size: clamp(28px, 4vw + 0.5rem, 40px);
     line-height: 1.2;
     letter-spacing: -0.02em;
     font-weight: 600;
   }
   .text-headline-accent {
-    font-size: 40px;
+    font-size: clamp(26px, 3.5vw + 0.5rem, 40px);
     line-height: 1.2;
     font-weight: 700;
   }
@@ -163,12 +162,7 @@
     letter-spacing: 0.05em;
     font-weight: 600;
   }
-  @media (max-width: 768px) {
-    .text-display-lg {
-      font-size: 48px;
-      letter-spacing: -0.03em;
-    }
-  }
+
   
   .btn-primary {
     @apply bg-primary text-background rounded-full active:scale-95 transition-all duration-300 ease-out;

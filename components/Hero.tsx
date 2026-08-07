@@ -20,7 +20,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (shouldReduceMotion) return;
-    
+
     // Only apply on devices with hover/pointer capabilities
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
     if (!mediaQuery.matches) return;
@@ -39,7 +39,7 @@ export default function Hero() {
   }, [mouseX, mouseY, shouldReduceMotion]);
 
   return (
-    <section className="relative pt-40 pb-20 overflow-hidden">
+    <section id="home" className="relative pt-40 pb-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
         <div className="z-10">
           <h1 className="text-display-lg mb-8 leading-[1.05]">
@@ -63,16 +63,16 @@ export default function Hero() {
         </div>
 
         <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
-          <div className="w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] lg:w-[750px] lg:h-[750px] relative">
+          <div className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] relative">
             {/* Glow Background */}
-            <motion.div 
+            <motion.div
               className="absolute inset-20 bg-primary/20 blur-[120px] rounded-full"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
               style={{ x: translateX, y: translateY }}
             />
-            
+
             <Image
               className="object-cover rounded-full scale-110 drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:drop-shadow-[0_0_60px_rgba(255,255,255,0.4)] transition-all duration-700 relative z-10"
               alt="A hyper-realistic 3D render of a glossy black liquid chrome sphere"
@@ -82,27 +82,27 @@ export default function Hero() {
             />
             {/* TODO: revisit once we have real numbers */}
             {/* Glass Cards */}
-            <motion.div 
+            <motion.div
               className="absolute top-10 right-0 glass-card p-6 rounded-card w-48"
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: "easeOut" }}
             >
               <div className="flex justify-between items-start mb-2">
-                <span className="text-display-lg text-3xl font-bold">Now</span>
+                <span className="text-3xl font-bold">Now</span>
                 <ArrowUpRight className="text-primary w-6 h-6" />
               </div>
               <p className="text-xs text-on-surface-variant font-label-bold uppercase tracking-wider">Accepting New Clients</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="absolute bottom-20 -left-10 glass-card p-6 rounded-card w-48 hidden sm:block"
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: "easeOut", delay: shouldReduceMotion ? 0 : 0.4 }}
             >
               <div className="flex justify-between items-start mb-2">
-                <span className="text-display-lg text-3xl font-bold">Stack</span>
+                <span className="text-3xl font-bold">Stack</span>
                 <ArrowUpRight className="text-primary w-6 h-6" />
               </div>
               <p className="text-xs text-on-surface-variant font-label-bold uppercase tracking-wider">Full-Stack + Security</p>
