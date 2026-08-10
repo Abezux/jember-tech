@@ -9,13 +9,34 @@ export default function ContactClient() {
   const searchParams = useSearchParams();
   const initialService = searchParams.get("service") || "";
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Contact form submitted:", data);
-    setSubmitted(true);
+    setLoading(true);
+    
+    try {
+      const formData = new FormData(e.currentTarget);
+      const data = Object.fromEntries(formData.entries());
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        console.error("Failed to submit contact form");
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -115,7 +136,13 @@ export default function ContactClient() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary py-4 mt-2 w-full">Send Message</button>
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="btn-primary py-4 mt-2 w-full disabled:opacity-50"
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
             </form>
           )}
         </div>
