@@ -13,13 +13,35 @@ import { Input } from "@/components/ui/input";
 export function ContactDialog({ children }: { children: React.ReactElement }) {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Form submitted:", data);
-    setSubmitted(true);
+    setLoading(true);
+    
+    try {
+      const formData = new FormData(e.currentTarget);
+      const data = Object.fromEntries(formData.entries());
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        console.error("Failed to submit form");
+        // Optionally handle error state here
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleOpenChange = (newOpen: boolean) => {
@@ -73,9 +95,10 @@ export function ContactDialog({ children }: { children: React.ReactElement }) {
             </div>
             <button
               type="submit"
-              className="btn-primary px-6 py-3 mt-4 w-full"
+              disabled={loading}
+              className="btn-primary px-6 py-3 mt-4 w-full disabled:opacity-50"
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         )}
