@@ -6,10 +6,10 @@ export async function POST(req: Request) {
     const { name, email, message, company, service, budget } = data;
 
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    const chatIds = process.env.TELEGRAM_CHAT_ID?.split(',').map(id => id.trim()) || [];
 
-    if (!botToken || !chatId) {
-      console.error("Missing Telegram bot token or chat ID");
+    if (!botToken || chatIds.length === 0) {
+      console.error("Missing Telegram bot token or chat IDs");
       return NextResponse.json(
         { error: "Server configuration error" },
         { status: 500 }
@@ -37,23 +37,27 @@ export async function POST(req: Request) {
 
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-    const response = await fetch(telegramApiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: text,
-        parse_mode: "Markdown",
-      }),
-    });
+    const sendPromises = chatIds.map((id) =>
+      fetch(telegramApiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: id,
+          text: text,
+          parse_mode: "Markdown",
+        }),
+      })
+    );
 
-    if (!response.ok) {
-      const errorData = await response.text();
-      console.error("Telegram API error:", errorData);
+    const responses = await Promise.all(sendPromises);
+    const hasError = responses.some((res) => !res.ok);
+
+    if (hasError) {
+      console.error("Telegram API error: One or more messages failed to send");
       return NextResponse.json(
-        { error: "Failed to send message to Telegram" },
+        { error: "Failed to send message to one or more Telegram chats" },
         { status: 500 }
       );
     }
