@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// TODO: populate with real client logos once we have 2-3+ clients. 
+// TOD0: populate with real client logos once we have 2-3+ clients. 
 // Example shape: { name: "Client Co", logoSrc: "/logos/client-co.svg" }
 const clients: { name: string; logoSrc?: string }[] = [];
 
