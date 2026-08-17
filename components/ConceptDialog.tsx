@@ -1,6 +1,5 @@
 "use client";
 
-import { ReactNode } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ConceptProject } from "@/lib/concept-projects";
 import { Code, ExternalLink } from "lucide-react";

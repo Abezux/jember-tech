@@ -35,19 +35,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const currentActiveSection = pathname === "/contact"
+    ? "contact"
+    : pathname.startsWith("/services")
+      ? "services"
+      : pathname === "/"
+        ? activeSection
+        : "";
+
   useEffect(() => {
-    if (pathname === "/contact") {
-      setActiveSection("contact");
-      return;
-    }
-    if (pathname.startsWith("/services")) {
-      setActiveSection("services");
-      return;
-    }
-    if (pathname !== "/") {
-      setActiveSection("");
-      return;
-    }
+    if (pathname !== "/") return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -81,7 +78,7 @@ export default function Navbar() {
               key={link.id}
               href={link.href}
               className={`text-label-md transition-colors duration-300 pb-1 border-b-2 ${
-                activeSection === link.id
+                currentActiveSection === link.id
                   ? "text-primary font-bold border-primary"
                   : "text-on-surface-variant font-medium hover:text-primary border-transparent"
               }`}
@@ -109,7 +106,7 @@ export default function Navbar() {
                     key={link.id}
                     onClick={() => setOpen(false)}
                     className={`text-label-md ${
-                      activeSection === link.id
+                      currentActiveSection === link.id
                         ? "text-primary font-bold"
                         : "text-on-surface-variant font-medium"
                     }`}

@@ -15,7 +15,7 @@ export default function FeatureSpotlight() {
           />
         </div>
         <div>
-          <h2 className="text-headline-lg mb-8">More Than A Dev Agency — We're A Product Partner</h2>
+          <h2 className="text-headline-lg mb-8">More Than A Dev Agency — We&apos;re A Product Partner</h2>
           <button className="btn-primary px-8 py-3.5 mb-16">Explore Now</button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
             <ScrollReveal delay={0.1}>

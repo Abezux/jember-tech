@@ -63,7 +63,7 @@ export function ContactDialog({ children }: { children: React.ReactElement }) {
 
         {submitted ? (
           <div className="py-6 text-center text-on-surface-variant">
-            <p>Thanks, we'll be in touch shortly!</p>
+            <p>Thanks, we&apos;ll be in touch shortly!</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">

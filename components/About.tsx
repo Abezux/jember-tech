@@ -28,12 +28,12 @@ export default function About() {
           <div className="lg:col-span-2">
             <ScrollReveal delay={0.4}>
               <p className="text-[18px] leading-[1.6] text-on-surface-variant mb-8">
-                At Jember Tech, we believe that technology should be as fluid as it is formidable. Our multidisciplinary team of engineers, designers, and strategists works at the intersection of innovation and security, crafting digital experiences that don't just solve problems—they define new standards of excellence.
+                At Jember Tech, we believe that technology should be as fluid as it is formidable. Our multidisciplinary team of engineers, designers, and strategists works at the intersection of innovation and security, crafting digital experiences that don&apos;t just solve problems—they define new standards of excellence.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.5}>
               <p className="text-[16px] leading-[1.5] text-on-surface-variant/60">
-                Founded on the principles of Ethiopian ingenuity and global tech standards, we bridge the gap between complex technical requirements and intuitive user outcomes. Whether it's a decentralized blockchain platform or a streamlined e-commerce hub, we build for the future.
+                Founded on the principles of Ethiopian ingenuity and global tech standards, we bridge the gap between complex technical requirements and intuitive user outcomes. Whether it&apos;s a decentralized blockchain platform or a streamlined e-commerce hub, we build for the future.
               </p>
             </ScrollReveal>
           </div>

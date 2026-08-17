@@ -1,36 +1,197 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jember Tech (አጀብ Tech)
+
+> Innovative, Scalable, and Secure Digital Solutions — Transforming modern enterprises with next-generation web engineering, cybersecurity, and AI integration.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+---
+
+## About
+
+**Jember Tech** is a full-stack digital agency and tech consultancy web platform designed to showcase enterprise-grade engineering capabilities. Founded on the intersection of modern Ethiopian ingenuity and global engineering standards, Jember Tech delivers high-performance web applications, resilient cybersecurity architectures, human-centered UI/UX systems, and AI-driven automation.
+
+The platform provides a high-converting, fluid web experience with dynamic service catalogs, interactive concept work showcases, transparent pricing models, and real-time Telegram-integrated client onboarding.
+
+---
+
+## Preview & Visual Assets
+
+<!-- Replace with live demo URL when deployed -->
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Coming_Soon-orange?style=for-the-badge)](#)
+
+### Screenshots
+
+Capture and place the following screenshots into [`docs/images/`](docs/images/):
+
+| View | Screenshot Target | Location |
+| :--- | :--- | :--- |
+| **Hero & Navigation** | Interactive hero section featuring parallax 3D sphere & live status pill | `docs/images/hero-preview.png` |
+| **Dynamic Service Detail** | Deep-dive service page with deliverables, process timeline, and FAQs | `docs/images/services-showcase.png` |
+| **Concept Work Gallery** | Concept project modal dialog with tech stack tags and links | `docs/images/concept-portfolio.png` |
+| **Inquiry & Contact System** | Contact workflow with dynamic service/budget selection | `docs/images/contact-form.png` |
+
+```markdown
+<!-- Example Markdown integration once images are placed in docs/images/ -->
+<p align="center">
+  <img src="docs/images/hero-preview.png" alt="Jember Tech Hero Preview" width="800" />
+</p>
+```
+
+---
+
+## Key Features
+
+- **Next.js 16 App Router & Turbopack**: Blazing-fast server-rendered & statically generated pages (SSG) with optimized metadata for SEO.
+- **Tailwind CSS v4 & Custom Design Tokens**: Fluid dark-mode aesthetic utilizing bespoke HSL palettes, glassmorphism (`backdrop-filter`), hairline borders, and smooth liquid-hover animations.
+- **Dynamic Service Architecture**: Fully dynamic service routes (`/services/[slug]`) generated at build time with comprehensive process steps, tech tags, and FAQs.
+- **Interactive Concept Portfolio**: Modal-driven concept case study gallery highlighting real-world architectural solutions.
+- **Real-Time Multi-Recipient Inquiry Bot**: Serverless API route (`/api/contact`) dispatching markdown-formatted lead notifications directly to configured Telegram recipient channels.
+- **Accessible & Responsive UI**: Accessible dialogs, accordions, and mobile navigation drawers powered by Radix / Base UI primitives and Framer Motion.
+- **Type-Safe Codebase**: Strict TypeScript typing across data models, parameters, and UI components.
+
+---
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- **Frontend Core**: [React 19](https://react.dev/), [TypeScript 5](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/) / [@base-ui/react](https://base-ui.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Notification Integration**: Telegram Bot API
+- **Deployment**: [Vercel](https://vercel.com)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Node.js](https://nodejs.org/) (v20.x or higher recommended)
+- `npm`, `pnpm`, or `yarn`
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Abezux/Tech-solutions.git
+   cd Tech-solutions
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a `.env.local` file in the root directory by copying the sample template:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Populate the environment variables:
+   | Variable | Description | Example / Format |
+   | :--- | :--- | :--- |
+   | `TELEGRAM_BOT_TOKEN` | API Token generated by Telegram BotFather | `123456789:ABCdefGHIjklMNOpqrsTUVwxyz` |
+   | `TELEGRAM_CHAT_ID` | Telegram Chat ID(s) to receive alerts (comma-separated for multi-recipient) | `987654321, -1001234567890` |
+
+4. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Project Structure
+
+```text
+Tech-solutions/
+├── app/                           # Next.js App Router root
+│   ├── api/contact/route.ts       # Serverless Telegram notification endpoint
+│   ├── contact/                   # Contact page & interactive form client
+│   ├── services/[slug]/           # Dynamic static-generated service detail pages
+│   ├── globals.css                # Tailwind v4 theme, tokens & custom utilities
+│   ├── layout.tsx                 # Root layout & global typography configuration
+│   └── page.tsx                   # Main landing page assembling sections
+├── components/                    # Reusable React components
+│   ├── ui/                        # Accessible UI primitives (dialog, accordion, etc.)
+│   ├── Hero.tsx                   # Interactive hero with motion effects
+│   ├── Services.tsx               # Grid catalog of agency capabilities
+│   ├── HowWeWork.tsx              # 6-step project execution lifecycle
+│   ├── About.tsx                  # Company vision & background metrics
+│   ├── Team.tsx                   # Founders & leadership cards
+│   ├── CaseStudies.tsx            # Concept work showcase grid
+│   ├── ConceptDialog.tsx          # Case study modal dialog
+│   ├── Pricing.tsx                # Transparent tiered service packages
+│   ├── FAQ.tsx                    # Interactive accordion FAQ
+│   ├── Navbar.tsx                 # Responsive glassmorphism navigation header
+│   └── Footer.tsx                 # Global footer with site navigation & social links
+├── lib/                           # Core utilities and structured data sources
+│   ├── concept-projects.ts        # Concept work models and project metadata
+│   ├── services-data.ts           # Dynamic service content, FAQs & workflows
+│   └── utils.ts                   # Class name merge helper (`cn`)
+├── docs/                          # Project documentation & visual assets
+│   └── images/                    # Screenshot storage for README
+├── public/                        # Static assets (images, icons)
+├── .env.example                   # Environment variable template
+├── .gitignore                     # Git ignore rules for node, next.js, IDEs & OS
+├── eslint.config.mjs              # ESLint configuration
+├── next.config.ts                 # Next.js configuration
+├── package.json                   # Dependencies and npm scripts
+└── tsconfig.json                  # TypeScript compiler configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In the project directory, you can run:
 
-## Learn More
+| Command | Action |
+| :--- | :--- |
+| `npm run dev` | Starts the development server on `http://localhost:3000` with Turbopack |
+| `npm run build` | Compiles the production build and validates static paths & TypeScript |
+| `npm run start` | Runs the built production server locally |
+| `npm run lint` | Runs ESLint to inspect code quality and enforce standards |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Connect production CMS for dynamic client portfolio case studies.
+- [ ] Add dark / light mode toggle (currently default dark palette).
+- [ ] Implement multi-language localization (Amharic & English).
+- [ ] Integrate automated booking / calendar scheduling workflow.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Abezux/Tech-solutions/issues).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## Contact & Connect
+
+**Jember Tech** — Addis Ababa, Ethiopia  
+- **Email**: [hello@jembertech.com](mailto:hello@jembertech.com)  
+- **GitHub**: [@Abezux](https://github.com/Abezux)  
+- **Website**: [jembertech.com](https://jembertech.com)

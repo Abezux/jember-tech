@@ -44,7 +44,7 @@ export default function ContactClient() {
       <div className="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         {/* Left Column */}
         <div>
-          <h1 className="text-display-lg mb-8 leading-[1.05]">Let's Build Something<br />Secure Together</h1>
+          <h1 className="text-display-lg mb-8 leading-[1.05]">Let&apos;s Build Something<br />Secure Together</h1>
           <p className="text-[18px] leading-[1.6] text-on-surface-variant mb-12">
             Whether you need a complete digital transformation, a scalable web application, or enterprise-grade security, our team is ready to deliver.
           </p>
@@ -64,7 +64,7 @@ export default function ContactClient() {
           {submitted ? (
             <div className="py-12 text-center text-on-surface-variant">
               <h3 className="text-2xl text-primary mb-4">Message Received</h3>
-              <p>Thanks for reaching out, we'll be in touch shortly!</p>
+              <p>Thanks for reaching out, we&apos;ll be in touch shortly!</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">

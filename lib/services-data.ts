@@ -1,4 +1,4 @@
-import { Code, PenSquare, Layers, ShieldCheck, Cpu, ListChecks, Cloud } from "lucide-react";
+import { Code, PenSquare, Layers, ShieldCheck, Cpu, ListChecks } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Service {

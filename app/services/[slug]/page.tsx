@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {/* 2. What's Included & Tools */}
       <section className="py-section-gap max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div>
-          <h2 className="text-headline-lg mb-10">What's Included</h2>
+          <h2 className="text-headline-lg mb-10">What&apos;s Included</h2>
           <div className="bg-surface hairline-border rounded-card p-10 flex flex-col gap-6">
             {service.deliverables.map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 0.1} className="flex items-start gap-4">
@@ -143,7 +143,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full"></div>
             <h2 className="text-headline-lg mb-6 relative z-10">Ready to Elevate Your {service.title}?</h2>
             <p className="text-on-surface-variant mb-10 max-w-xl relative z-10">
-              Let's discuss how our technical expertise can accelerate your business objectives and solve your most complex challenges.
+              Let&apos;s discuss how our technical expertise can accelerate your business objectives and solve your most complex challenges.
             </p>
             <Link href={`/contact?service=${service.slug}`} className="btn-primary px-10 py-4 text-lg relative z-10 inline-block">
               Get In Touch
